@@ -7,6 +7,7 @@ const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
 const foodRoutes = require('./routes/foodRoutes');
 const workoutRoutes = require('./routes/workoutRoutes');
+const authRoutes = require('./routes/authRoutes');
 
 // Initialize Express app
 const app = express();
@@ -28,6 +29,7 @@ app.get('/', (req, res) => {
 app.use('/api/users', userRoutes);
 app.use('/api/food', foodRoutes);
 app.use('/api/workouts', workoutRoutes);
+app.use('/api/auth', authRoutes);
 
 // Get port from environment variables or use default
 const PORT = process.env.PORT || 5000;
